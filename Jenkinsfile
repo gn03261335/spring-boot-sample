@@ -28,7 +28,8 @@ pipeline {
     }
     stage('package') {
       steps {
-        sh 'mvn package'
+        sh '''mvn package
+make deploy-default'''
         archiveArtifacts 'target/*.jar'
       }
     }
